@@ -25,7 +25,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	Mat src; //输入图像
 	cout << "This is a demo for Parking slot detection." << endl;
 	cout << "开始读入图像..." << endl;
-	string filename = "Img\\10.jpg";//图像路径位置 "Img\\birdView0015.png"   calib\\_70.png
+	string filename = "Img\\02.png";//图像路径位置 "Img\\birdView0015.png"   calib\\_70.png
 	src = imread(filename, -1);//载入测试图像
 	if (src.empty())//不能读取图像
 	{
@@ -37,7 +37,7 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	vector<Point> corners;//存储找到的角点
 	FindCorners corner_detector(src);
-	corner_detector.detectCorners(src, corners,0.01);
+	corner_detector.detectCorners(src, corners,0.025);
 	return 0;
 }
 
